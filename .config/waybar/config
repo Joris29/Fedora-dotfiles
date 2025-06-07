@@ -1,0 +1,24 @@
+{
+  "layer": "top",
+
+  "output": "HDMI-A-1",
+
+  "include": "~/.config/waybar/modules",
+
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+
+  "modules-center": [
+    "clock"
+  ],
+
+  "modules-right": [
+    "custom/updates",
+    "pulseaudio",
+    "battery",
+    "network",
+    "custom/notifications",
+    "custom/exit"
+  ]
+}

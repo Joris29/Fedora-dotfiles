@@ -1,0 +1,38 @@
+* {
+    background-image: none;
+    box-shadow: none;
+}
+
+window {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+button {
+    background-color: rgba(255, 255, 255, 0.8);;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15%;
+    border-radius: 50px;
+    border: 5px solid black;
+    margin: 20px;
+}
+
+button:hover {
+    background-size: 30%;
+}
+
+#lock {
+    background-image: image(url("./icons/lock.png"));
+}
+
+#logout {
+    background-image: image(url("./icons/logout.png"));
+}
+
+#shutdown {
+    background-image: image(url("./icons/shutdown.png"));
+}
+
+#reboot {
+    background-image: image(url("./icons/reboot.png"));
+}

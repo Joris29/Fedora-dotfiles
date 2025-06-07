@@ -1,0 +1,51 @@
+configuration {
+  drun {
+    display-name: 'Run app:';
+  }
+  show-icons: true;
+}
+
+* {
+  background-color: white;
+  border-color: black;
+  text-color: black;
+}
+
+case-indicator  {
+  enabled: false;
+}
+
+element selected, inputbar, prompt, entry {
+  background-color: black;
+  text-color: white;
+}
+
+element-text, element-icon {
+  background-color: inherit;
+  margin: 2px 5px 5px 2px;
+  padding: 2px;
+  text-color: inherit;
+}
+
+entry {
+  placeholder: "Search";
+}
+
+inputbar {
+  padding: 12px;
+}
+
+listview, message, window {
+  border: 5px;
+  border-radius: 15px;
+}
+
+listview {
+  padding: 20px;
+  margin: 20px 30px 30px 20px;
+}
+
+message {
+  margin: 30px;
+  padding: 20px;
+}
