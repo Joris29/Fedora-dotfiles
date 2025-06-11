@@ -2,6 +2,7 @@
 
 declare -a DNF_PKGS=(
     'bc'
+    'code'
     'curl'
     'fzf'
     'git'
