@@ -23,6 +23,7 @@ declare -a DNF_PKGS=(
     'playerctl'
     'python3-pip'
     'rofi-wayland'
+    'stow'
     'SwayNotificationCenter'
     'tmux'
     'unzip'
@@ -33,3 +34,5 @@ declare -a DNF_PKGS=(
 
 sudo dnf update -y
 sudo dnf install -y "${DNF_PKGS[@]}"
+
+stow . -t "$HOME" --ignore=install.sh
