@@ -35,4 +35,4 @@ declare -a DNF_PKGS=(
 sudo dnf update -y
 sudo dnf install -y "${DNF_PKGS[@]}"
 
-stow . -t "$HOME" --ignore=install.sh
+stow fedora -d "$HOME/dotfiles" -t "$HOME" --ignore=install.sh
