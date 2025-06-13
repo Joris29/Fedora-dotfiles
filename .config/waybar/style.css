@@ -1,0 +1,81 @@
+* {
+    border: none;
+    font-family: "Droid Sans", "Font Awesome 6 Free Solid", FontAwesome, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background: black;
+}
+
+#workspaces {
+    margin: 2px 1px 2px 1px;
+}
+
+#workspaces button {
+    padding: 0px 5px;
+    margin: 5px 0px;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active label {
+    min-width: 20px;
+    transition: all 0.3s ease-in-out;
+    background: white;
+    color: black;
+    border-radius: 20px;
+}
+
+#workspaces button:hover {
+    border-radius: 15px;
+}
+
+tooltip {
+    padding:20px;
+    margin:0px;
+}
+
+#custom-notifications {
+    margin: 0px 10px 0px 0px;
+    padding:0px;
+}
+
+#custom-exit {
+    margin: 0px 10px 0px 0px;
+    padding:0px;
+}
+
+#custom-updates {
+    padding: 2px 10px 0px 10px;
+    margin: 5px 15px 5px 0px;
+}
+
+#pulseaudio {
+    padding: 2px 10px 0px 10px;
+    margin: 5px 15px 5px 0px;
+}
+
+#network {
+    padding: 2px 10px 0px 10px;
+    margin: 5px 15px 5px 0px;
+}
+
+#battery {
+    padding: 2px 15px 0px 10px;
+    margin: 5px 15px 5px 0px;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes blink {
+    to {
+       background-color: black;
+    }
+}
+

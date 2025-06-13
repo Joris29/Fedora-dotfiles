@@ -1,0 +1,41 @@
+{
+  "chat.commandCenter.enabled": false,
+  "editor.fontFamily": "'Droid Sans Mono', 'monospace','Font Awesome 6 Free Solid'",
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "all",
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "files.trimTrailingWhitespace": true,
+  "git.autofetch": true,
+  "git.branchWhitespaceChar": "_",
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "git.ignoreRebaseWarning": true,
+  "git.inputValidation": true,
+  "git.openRepositoryInParentFolders": "never",
+  "terminal.integrated.defaultProfile.linux": "vsctmux",
+  "terminal.integrated.enablePersistentSessions": false,
+  "terminal.integrated.env.linux": {
+    "GDK_BACKEND": "wayland",
+  },
+  "terminal.integrated.persistentSessionScrollback": 500,
+  "terminal.integrated.profiles.linux": {
+    "vsctmux": {
+      "path": "/usr/bin/tmux",
+      "args": ["new-session", "-ADs", "vscode"],
+      "icon": "terminal-tmux"
+    },
+  },
+  "window.commandCenter": false,
+  "window.customTitleBarVisibility": "auto",
+  "window.menuBarVisibility": "toggle",
+  "window.titleBarStyle": "native",
+  "workbench.editor.editorActionsLocation": "hidden",
+  "workbench.editorAssociations": {
+    "git-rebase-todo": "gitlens.rebase"
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.layoutControl.enabled": false,
+  "workbench.startupEditor": "none",
+}
