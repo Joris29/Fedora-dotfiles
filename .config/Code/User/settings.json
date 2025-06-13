@@ -26,7 +26,7 @@
         "args": ["new-session", "-ADs", "vscode"],
         "icon": "terminal-tmux"
     },
-},
+  },
   "window.commandCenter": false,
   "window.customTitleBarVisibility": "auto",
   "window.menuBarVisibility": "toggle",
