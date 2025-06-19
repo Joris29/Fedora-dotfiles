@@ -4,7 +4,7 @@ action=$1
 
 case "$action" in
     check)
-        updates=$(sudo dnf check-update --refresh -q | grep -c '^[a-z0-9]')
+        updates=$(dnf check-update --refresh -q | grep -c '^[a-z0-9]')
 
         if [ "$updates" -gt 0 ]; then
             printf '{"text": "%s", "alt": "%s", "tooltip": "Click to update your system"}' "$updates" "$updates"
