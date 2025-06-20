@@ -1,6 +1,6 @@
 #!/bin/bash
 
-action=$1
+action="${1:-}"
 
 case "$action" in
     check)
@@ -13,10 +13,19 @@ case "$action" in
         fi
         ;;
     update)
-        kitty sh -c 'echo "Install updates" && sudo dnf update --refresh -q && pkill waybar && hyprctl dispatch exec waybar'
+        kitty sh -c '
+            echo "Install updates"
+            if sudo dnf update --refresh -q; then
+                pkill waybar
+                hyprctl dispatch exec waybar
+            else
+                echo "Updates failed." >&2
+                read -n 1 -s -r -p "Press any key to close"
+            fi
+        '
         ;;
     *)
-        echo "Invalid action specified. Valid options are: check and update"
+        echo "Usage: $0 {check|update}"
         exit 1
         ;;
 esac
