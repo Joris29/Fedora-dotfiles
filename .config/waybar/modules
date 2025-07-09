@@ -10,9 +10,9 @@
     "format": " {}",
     "escape": true,
     "return-type": "json",
-    "exec": "~/.config/scripts/updates.sh check",
+    "exec": "~/.local/bin/updates.sh check",
     "interval": 1800,
-    "on-click": "~/.config/scripts/updates.sh update"
+    "on-click": "~/.local/bin/updates.sh update"
   },
 
   "custom/exit": {
