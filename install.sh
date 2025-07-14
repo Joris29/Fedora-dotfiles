@@ -2,24 +2,31 @@
 
 declare -a DNF_PKGS=(
     'bc'
+    'cmake'
     'code'
+    'cpio'
     'curl'
     'fzf'
+    'g++'
+    'gcc'
+    'git'
     'git'
     'grim'
     'htop'
     'hypridle'
-    'hyprland'
+    'hyprland-devel'
     'hyprlock'
     'hyprpaper'
     'hyprpolkitagent'
     'jq'
     'kitty'
+    'meson'
     'nm-connection-editor'
     'nwg-look'
     'openssl'
     'pamixer'
     'pavucontrol'
+    'pkg-config'
     'playerctl'
     'python3-pip'
     'rofi-wayland'
@@ -45,5 +52,10 @@ sudo dnf config-manager addrepo -y --from-repofile="https://copr.fedorainfraclou
 
 sudo dnf check-update
 sudo dnf install -y "${DNF_PKGS[@]}"
+
+hyprpm update
+hyprpm add https://github.com/hyprwm/hyprland-plugins
+hyprpm add https://github.com/KZDKM/Hyprspace
+hyprpm enable hyprspace
 
 stow fedora -d "$HOME/dotfiles" -t "$HOME" --ignore=install.sh
