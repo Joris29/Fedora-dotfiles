@@ -1,4 +1,5 @@
 {
+  "chat.agent.enabled": false,
   "chat.commandCenter.enabled": false,
   "editor.fontFamily": "'Droid Sans Mono', 'monospace','Font Awesome 6 Free Solid'",
   "editor.minimap.enabled": false,
@@ -14,6 +15,7 @@
   "git.ignoreRebaseWarning": true,
   "git.inputValidation": true,
   "git.openRepositoryInParentFolders": "never",
+  "telemetry.telemetryLevel": "off",
   "terminal.integrated.defaultProfile.linux": "vsctmux",
   "terminal.integrated.enablePersistentSessions": false,
   "terminal.integrated.env.linux": {
@@ -37,5 +39,5 @@
   },
   "workbench.iconTheme": "material-icon-theme",
   "workbench.layoutControl.enabled": false,
-  "workbench.startupEditor": "none",
+  "workbench.startupEditor": "none"
 }
