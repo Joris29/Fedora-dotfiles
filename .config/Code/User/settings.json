@@ -16,19 +16,6 @@
   "git.inputValidation": true,
   "git.openRepositoryInParentFolders": "never",
   "telemetry.telemetryLevel": "off",
-  "terminal.integrated.defaultProfile.linux": "vsctmux",
-  "terminal.integrated.enablePersistentSessions": false,
-  "terminal.integrated.env.linux": {
-    "GDK_BACKEND": "wayland",
-  },
-  "terminal.integrated.persistentSessionScrollback": 500,
-  "terminal.integrated.profiles.linux": {
-    "vsctmux": {
-      "path": "/usr/bin/tmux",
-      "args": ["new-session", "-ADs", "vscode"],
-      "icon": "terminal-tmux"
-    },
-  },
   "window.commandCenter": false,
   "window.customTitleBarVisibility": "auto",
   "window.menuBarVisibility": "toggle",
