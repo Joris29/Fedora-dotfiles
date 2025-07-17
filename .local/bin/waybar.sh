@@ -1,13 +1,13 @@
 #!/bin/bash
 
-WAYBAR_CONFIG=$HOME/.config/waybar/config
+CONFIG=$HOME/.config/waybar/config
 
 if ! pgrep -x "waybar" > /dev/null; then
     waybar &
 fi
 
 while true; do
-    CURRENT_OUTPUT=$(grep '"output":' "$WAYBAR_CONFIG" | awk -F '"' '{print $4}')
+    CURRENT_OUTPUT=$(grep '"output":' "$CONFIG" | awk -F '"' '{print $4}')
     MONITOR_COUNT=$(hyprctl monitors | grep -c 'Monitor.*')
 
     if [ "$MONITOR_COUNT" -gt 1 ]; then
@@ -17,7 +17,7 @@ while true; do
     fi
 
     if [ "$CURRENT_OUTPUT" != "$DESIRED_OUTPUT" ]; then
-        sed -i "s/\"output\": \".*\"/\"output\": \"$DESIRED_OUTPUT\"/" "$WAYBAR_CONFIG"
+        sed -i "s/\"output\": \".*\"/\"output\": \"$DESIRED_OUTPUT\"/" "$CONFIG"
         pkill waybar
         waybar &
     fi

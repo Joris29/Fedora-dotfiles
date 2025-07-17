@@ -11,6 +11,7 @@ declare -a DNF_PKGS=(
     'gcc'
     'git'
     'git'
+    'go'
     'grim'
     'htop'
     'hypridle'
@@ -57,5 +58,7 @@ hyprpm update
 hyprpm add https://github.com/hyprwm/hyprland-plugins
 hyprpm add https://github.com/KZDKM/Hyprspace
 hyprpm enable hyprspace
+
+go install github.com/dkyanakiev/vaul7y@latest
 
 stow fedora -d "$HOME/dotfiles" -t "$HOME" --ignore=install.sh
