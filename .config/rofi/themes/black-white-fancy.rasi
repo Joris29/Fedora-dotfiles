@@ -40,12 +40,7 @@ listview, message, window {
   border-radius: 15px;
 }
 
-listview {
+error-message, listview, message {
   padding: 20px;
-  margin: 20px 30px 30px 20px;
-}
-
-message {
-  margin: 30px;
-  padding: 20px;
+  margin: 20px;
 }
