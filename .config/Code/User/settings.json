@@ -15,6 +15,7 @@
   "git.ignoreRebaseWarning": true,
   "git.inputValidation": true,
   "git.openRepositoryInParentFolders": "never",
+  "postman.mcp.notifications.postmanMCP": false,
   "telemetry.telemetryLevel": "off",
   "window.commandCenter": false,
   "window.customTitleBarVisibility": "auto",

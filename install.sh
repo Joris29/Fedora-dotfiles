@@ -15,6 +15,7 @@ declare -a DNF_PKGS=(
     'grim'
     'htop'
     'hypridle'
+    'hyprland'
     'hyprland-devel'
     'hyprlock'
     'hyprpaper'
@@ -53,12 +54,5 @@ sudo dnf config-manager addrepo -y --from-repofile="https://copr.fedorainfraclou
 
 sudo dnf check-update
 sudo dnf install -y "${DNF_PKGS[@]}"
-
-hyprpm update
-hyprpm add https://github.com/hyprwm/hyprland-plugins
-hyprpm add https://github.com/KZDKM/Hyprspace
-hyprpm enable hyprspace
-
-go install github.com/dkyanakiev/vaul7y@latest
 
 stow fedora -d "$HOME/dotfiles" -t "$HOME" --ignore=install.sh
