@@ -27,10 +27,6 @@ element-text, element-icon {
   text-color: inherit;
 }
 
-entry {
-  placeholder: "Search";
-}
-
 inputbar {
   padding: 12px;
 }
