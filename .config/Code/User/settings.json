@@ -1,6 +1,7 @@
 {
   "chat.agent.enabled": false,
   "chat.commandCenter.enabled": false,
+  "diffEditor.ignoreTrimWhitespace": false,
   "editor.fontFamily": "'Droid Sans Mono', 'monospace','Font Awesome 6 Free Solid'",
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "all",
