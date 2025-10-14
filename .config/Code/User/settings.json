@@ -17,6 +17,7 @@
   "git.inputValidation": true,
   "git.openRepositoryInParentFolders": "never",
   "postman.mcp.notifications.postmanMCP": false,
+  "postman.telemetry.enabled": false,
   "telemetry.telemetryLevel": "off",
   "window.commandCenter": false,
   "window.customTitleBarVisibility": "auto",
