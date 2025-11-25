@@ -1,6 +1,9 @@
 {
   "chat.agent.enabled": false,
   "chat.commandCenter.enabled": false,
+  "codeium.enableConfig": {
+    "*": true
+  },
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.fontFamily": "'Droid Sans Mono', 'monospace','Font Awesome 6 Free Solid'",
   "editor.minimap.enabled": false,
@@ -8,6 +11,7 @@
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
+  "extensions.ignoreRecommendations": true,
   "files.trimTrailingWhitespace": true,
   "git.autofetch": true,
   "git.branchWhitespaceChar": "_",
