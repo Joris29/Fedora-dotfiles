@@ -40,15 +40,14 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-if [[ ! -f "$CONFIG" ]]; then
-  rofi_msg "Keybinds config file not found: $CONFIG"
-  exit 1
-fi
+[[ -f "$CONFIG" ]] || { rofi_msg "Keybinds config file not found: $CONFIG"; exit 1; }
+[[ -f "$ROFI" ]] || { rofi_msg "Rofi config file not found: $ROFI"; exit 1; }
 
-if [[ ! -f "$ROFI" ]]; then
-  rofi_msg "Rofi config file not found: $ROFI"
-  exit 1
-fi
+declare -A VARS
+while IFS='=' read -r k v; do
+  [[ $k =~ ^\s*\$ ]] || continue
+  VARS["$k"]="$v"
+done < "$CONFIG"
 
 KEYBINDS=$(grep -E '^bind' "$CONFIG")
 KEYVARS=$(grep -E '\$.*=.*' "$CONFIG")
@@ -58,9 +57,71 @@ if [[ -z "$KEYBINDS" ]]; then
   exit 1
 fi
 
-echo "$KEYBINDS"
+# echo "$KEYBINDS"
+echo "${VARS[*]}"
 echo "$KEYVARS"
 
-# echo "$KEYBINDS" | rofi -dmenu -i -p "Search keybind:" -config "$ROFI"
+echo "$KEYBINDS" | rofi -dmenu -i -p "Search keybind:" -config "$ROFI"
 
-# hyprctl dispatch "$DISPATCHER" "$ACTION"
+#####
+# while IFS='=' read -r k v; do
+#   [[ $k =~ ^\s*\$ ]] || continue
+#   VARS["${k// /}"]="$(echo "$v" | sed 's/#.*//;s/^ *//;s/ *$//')"
+# done < "$CONFIG"
+
+# expand() {
+#   local line="$1"
+#   for key in "${!VARS[@]}"; do line="${line//${key}/${VARS[$key]}}"; done
+#   echo "$line"
+# }
+
+# # --- Parse binds ---
+# mapfile -t BINDS < <(grep -E '^\s*bind[a-z]*\s*=' "$CONFIG")
+# MENU_ITEMS=()
+# DISPATCHERS=()
+# ARGS=()
+
+# for raw in "${BINDS[@]}"; do
+#   line=$(expand "${raw#*=}")
+#   IFS=',' read -ra parts <<< "$line"
+#   for i in "${!parts[@]}"; do parts[$i]=$(echo "${parts[$i]}" | xargs); done
+
+#   # Extract modifiers, key, and remaining tokens
+#   combo="${parts[0]}"
+#   key="${parts[1]}"
+#   rest=("${parts[@]:2}")
+
+#   # Detect description if present (4 or more parts)
+#   if (( ${#parts[@]} >= 5 )); then
+#     desc="${rest[0]}"
+#     dispatcher="${rest[1]}"
+#     args="${rest[@]:2}"
+#   else
+#     desc=""
+#     dispatcher="${rest[0]}"
+#     args="${rest[@]:1}"
+#   fi
+
+#   combo=$(echo "$combo + $key" | sed 's/^ *+ *//;s/ *+ *$//;s/  */ /g')
+
+#   [[ -n "$desc" ]] && label="$combo → $desc" || label="$combo → $dispatcher $args"
+#   MENU_ITEMS+=("$label")
+#   DISPATCHERS+=("$dispatcher")
+#   ARGS+=("$args")
+# done
+
+# # --- Show menu ---
+# sel=$(printf '%s\n' "${MENU_ITEMS[@]}" | rofi -dmenu -theme "$ROFI" -i -p "Keybinds") || exit 0
+
+# # --- Run selection ---
+# for i in "${!MENU_ITEMS[@]}"; do
+#   [[ ${MENU_ITEMS[$i]} == "$sel" ]] || continue
+#   d="${DISPATCHERS[$i]}"
+#   a="${ARGS[$i]}"
+#   if [[ "$d" == "exec" ]]; then
+#     hyprctl dispatch exec "$a" & disown
+#   else
+#     hyprctl dispatch "$d" $a & disown
+#   fi
+#   break
+# done
